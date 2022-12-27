@@ -13,4 +13,10 @@ export default class Carrinho {
   adicionaFrete(frete) {
     this.frete = frete;
   }
+
+  finalizarCompra() {
+    if (this.itens.length === 0) {
+      throw new Error("Carrinho está vazio");
+    }
+  }
 }

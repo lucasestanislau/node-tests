@@ -20,4 +20,13 @@ describe("Testes para o carrinho de comporas", () => {
     expect(carrinho.itens).toContain(item1);
     expect(carrinho.itens).toContain(item2);
   });
+
+  it("Deve gerar erro ao finalizar compra sem itens no carrinho", () => {
+    function englobaError() {
+      const carrinho = new Carrinho();
+      carrinho.finalizarCompra();
+    }
+
+    expect(englobaError).toThrowError("Carrinho está vazio");
+  });
 });
